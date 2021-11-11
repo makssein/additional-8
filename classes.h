@@ -8,7 +8,7 @@ namespace myClasses {
     };
     class triangle {
     public:
-        //triangle();
+        triangle();
         triangle(Point A, Point B, Point C);
         ~triangle();
         double Square();

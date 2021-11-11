@@ -1,12 +1,9 @@
 #pragma once
-#include "circle.h"
+#include "classes.h"
 
 namespace myClasses{
-    myClasses::triangle(){
-        std::cout<<"empty constructor" << std::endl;
-    }
 
-    myClasses::triangle(Point A, Point B, Point C) {
+    triangle::triangle(Point A, Point B, Point C) {
         m_A = A;
         m_B = B;
         m_C = C;
@@ -19,28 +16,28 @@ namespace myClasses{
             std::cout << "Треугольник не является равносторонним" << std::endl;
             A.x = 1, A.y = 1, B.x = 3, B.y = 1, C.x = 2, C.y = 2;
         }
-        double myClasses::Perimeter(){
+        double triangle::Perimeter(){
             return d1+d2+d3;
         }
-        int myClasses::Square(){
+        int triangle::Square(){
             p=d1+d2+d3;
             miniP = 0.5 * p;
             return sqrt(miniP * (miniP - d1)*(miniP-d2)*(miniP-d3));
         }
-        void myClasses::SetA(Point A){
+        void triangle::SetA(Point A){
             m_A.x = A.x;
             m_A.y = A.y;
         }
-        void myClasses::SetB(Point B){
+        void triangle::SetB(Point B){
             m_B.x = B.x;
             m_B.y = B.y;
         }
-        void myClasses::SetC(Point C){
+        void triangle::SetC(Point C){
             m_C.x = C.x;
             m_C.y = C.y;
         }
     }
-    myClasses::~triangle(){
+    triangle::~triangle(){
         std::cout << "destructor" << std::endl;
     }
 }

@@ -1,11 +1,12 @@
 ﻿#include <iostream>
-#include "classes.h"
+#include "classes.hpp"
 
 
 
 int main() {
-    myClasses::triangle trian;
+
     myClasses::Point A, B, C;
+    myClasses::Triangle trian;
     std::cin >> A.x >> A.y >> B.x >> B.y >> C.x >> C.y;
     trian.SetA(A);
     trian.SetB(B);

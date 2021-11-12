@@ -2,14 +2,13 @@
 
 namespace myClasses {
     int d1, d2, d3;
-    Triangle::Triangle() {
+    Triangle::Triangle() { 
         std::cout << "empty" << std::endl;
     }
     Triangle::Triangle(Point A, Point B, Point C) {
         m_A = A;
         m_B = B;
         m_C = C;
-        std::cout << A;
         d1 = sqrt((B.x - A.x) * (B.x - A.x) + (B.y - A.y) * (B.y - A.y));
         d2 = sqrt((B.x - C.x) * (B.x - C.x) + (B.y - C.y) * (B.y - C.y));
         d3 = sqrt((A.x - C.x) * (A.x - C.x) + (A.y - C.y) * (A.y - C.y));

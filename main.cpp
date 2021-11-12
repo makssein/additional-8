@@ -4,7 +4,6 @@
 
 
 int main() {
-
     myClasses::Point A, B, C;
     myClasses::Triangle trian;
     std::cin >> A.x >> A.y >> B.x >> B.y >> C.x >> C.y;

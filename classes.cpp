@@ -1,33 +1,39 @@
 #include "classes.hpp"
+#include <math.h>
 
 namespace myClasses {
-    int d1, d2, d3;
-    Triangle::Triangle() { 
+    Triangle::Triangle() {
         std::cout << "empty" << std::endl;
     }
     Triangle::Triangle(Point A, Point B, Point C) {
         m_A = A;
         m_B = B;
         m_C = C;
-        d1 = sqrt((B.x - A.x) * (B.x - A.x) + (B.y - A.y) * (B.y - A.y));
-        d2 = sqrt((B.x - C.x) * (B.x - C.x) + (B.y - C.y) * (B.y - C.y));
-        d3 = sqrt((A.x - C.x) * (A.x - C.x) + (A.y - C.y) * (A.y - C.y));
 
-        if (d1 != d2 != d3) {
-            std::cout << "Òðåóãîëüíèê íå ÿâëÿåòñÿ ðàâíîñòîðîííèì" << std::endl;
-            d1 = 1;
-            d2 = 1;
-            d3 = 1;
+        if (m_d1 != m_d2 || m_d2 != m_d3 || m_d1 != m_d3) {
+            std::cout << "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº Ð½Ðµ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ñ€Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð¾Ð½Ð½Ð¸Ð¼" << std::endl;
+            m_d1 = 1;
+            m_d2 = 1;
+            m_d3 = 1;
         }
         std::cout << "Constructor works!" << std::endl;
     }
-    int Triangle::Perimeter() {
-        return d1 + d2 + d3;
+    Triangle::~Triangle() {
+        std::cout << "destructor" << std::endl;
+    }
+    double Triangle::Perimeter() {
+        m_d1 = lengthOfSide(m_B, m_A);
+        m_d2 = lengthOfSide(m_C, m_B);
+        m_d3 = lengthOfSide(m_A, m_C);
+        return m_d1 + m_d2 + m_d3;
     }
     double Triangle::Square() {
-        int p = d1 + d2 + d3;
-        int miniP = 0.5 * p;
-        return sqrt(miniP * (miniP - d1) * (miniP - d2) * (miniP - d3));
+        m_d1 = lengthOfSide(m_B, m_A);
+        m_d2 = lengthOfSide(m_C, m_B);
+        m_d3 = lengthOfSide(m_A, m_C);
+        double p = m_d1 + m_d2 + m_d3;
+        double miniP = 0.5 * p;
+        return sqrt(miniP * (miniP - m_d1) * (miniP - m_d2) * (miniP - m_d3));
     }
     void Triangle::SetA(Point A) {
         m_A.x = A.x;
@@ -41,8 +47,4 @@ namespace myClasses {
         m_C.x = C.x;
         m_C.y = C.y;
     }
-    Triangle::~Triangle() {
-        std::cout << "destructor" << std::endl;
-    }
-
 }

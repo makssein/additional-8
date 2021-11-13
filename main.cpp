@@ -3,8 +3,8 @@
 
 int main() {
     myClasses::Point A, B, C;
-    myClasses::Triangle trian(A,B,C);
     std::cin >> A.x >> A.y >> B.x >> B.y >> C.x >> C.y;
+    myClasses::Triangle trian(A,B,C);
     trian.SetA(A);
     trian.SetB(B);
     trian.SetC(C);

@@ -4,8 +4,8 @@
 
 namespace myClasses {
     struct Point {
-        int x;
-        int y;
+        double x;
+        double y;
     };
     class Triangle {
         public:

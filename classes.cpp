@@ -9,12 +9,15 @@ namespace myClasses {
         m_A = A;
         m_B = B;
         m_C = C;
+        m_d1 = lengthOfSide(m_B, m_A);
+        m_d2 = lengthOfSide(m_C, m_B);
+        m_d3 = lengthOfSide(m_A, m_C);
 
         if (m_d1 != m_d2 || m_d2 != m_d3 || m_d1 != m_d3) {
             std::cout << "Треугольник не является равностороонним" << std::endl;
-            m_d1 = 1;
-            m_d2 = 1;
-            m_d3 = 1;
+            m_A = {1, 2};
+            m_B = {0,0};
+            m_C = {3, 3};
         }
         std::cout << "Constructor works!" << std::endl;
     }
